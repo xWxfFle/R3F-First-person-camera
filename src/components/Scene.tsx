@@ -8,7 +8,7 @@ import { Room } from "./Room";
 
 export const Scene = () => {
   return (
-    <div className=" w-full h-screen bg-zinc-800">
+    <div className=" w-full h-screen bg-zinc-900">
       <KeyboardControls
         map={[
           { name: "forward", keys: ["ArrowUp", "w", "W", "ц", "Ц"] },
