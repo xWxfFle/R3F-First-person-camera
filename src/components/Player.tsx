@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import * as RAPIER from "@dimforge/rapier3d-compat";
-import { useCallback, useRef } from "react";
+import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useKeyboardControls } from "@react-three/drei";
 import {
@@ -10,13 +10,12 @@ import {
   useRapier,
 } from "@react-three/rapier";
 
-const SPEED = 9;
 const direction = new THREE.Vector3();
 const frontVector = new THREE.Vector3();
 const sideVector = new THREE.Vector3();
 const rotation = new THREE.Vector3();
 
-export function Player({ lerp = THREE.MathUtils.lerp }) {
+export function Player() {
   const ref = useRef<RigidBodyApi>(null);
   const rapier = useRapier();
   const [, get] = useKeyboardControls();
@@ -33,7 +32,7 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
     direction
       .subVectors(frontVector, sideVector)
       .normalize()
-      .multiplyScalar(SPEED)
+      .multiplyScalar(9)
       .applyEuler(state.camera.rotation);
     ref.current!.setLinvel({ x: direction.x, y: velocity.y, z: direction.z });
     // jumping
@@ -50,7 +49,7 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
       colliders={false}
       mass={1}
       type="dynamic"
-      position={[0, 10, 0]}
+      position={[-2, 4, 24]}
       enabledRotations={[false, false, false]}
     >
       <CapsuleCollider args={[0.75, 0.5]} />

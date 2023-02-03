@@ -1,18 +1,13 @@
-import { useState } from "react";
 import "./App.css";
-import { Navigation } from "./components/course/Navigation";
-import { Scene } from "./components/Scene";
-import { UserList } from "./components/course/UserList";
-import { Test, Walking } from "./components/Walking";
+import { Overlay } from "./components/Overlay";
+import { Scene} from "./components/Scene";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <Test />
+      <Scene />
+      <Overlay/>
     </div>
   );
 }
-
 export default App;
