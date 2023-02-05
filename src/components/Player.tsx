@@ -13,7 +13,6 @@ import {
 const direction = new THREE.Vector3();
 const frontVector = new THREE.Vector3();
 const sideVector = new THREE.Vector3();
-const rotation = new THREE.Vector3();
 
 export function Player() {
   const ref = useRef<RigidBodyApi>(null);
@@ -52,7 +51,7 @@ export function Player() {
       position={[-2, 4, 24]}
       enabledRotations={[false, false, false]}
     >
-      <CapsuleCollider args={[0.75, 0.5]} />
+      <CapsuleCollider args={[0.75, 1]} />
     </RigidBody>
   );
 }
