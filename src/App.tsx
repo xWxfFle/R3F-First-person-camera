@@ -1,14 +1,13 @@
-import { useState } from "react";
-import { Overlay } from "./components/Overlay";
-import { Scene } from "./components/Scene";
+import { useState } from 'react'
+import { Landing } from './components/landing'
+import { Stage } from './components/stage'
 
-function App() {
-  const [ready, setReady] = useState(false);
+export function App() {
+  const [ready, setReady] = useState(false)
   return (
-    <div className="App">
-      {!ready && <Overlay set={setReady} />}
-      {ready && <Scene/>}
+    <div className='bg-violet-950 w-screen h-screen'>
+      {!ready && <Landing setReady={setReady} />}
+      {ready && <Stage />}
     </div>
-  );
+  )
 }
-export default App;

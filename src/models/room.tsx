@@ -6,54 +6,54 @@ source: https://sketchfab.com/3d-models/the-charterhouse-great-chamber-50e692c03
 title: The Charterhouse Great Chamber
 */
 
-import * as THREE from "three";
-import { useGLTF } from "@react-three/drei";
-import { GLTF } from "three-stdlib";
-import { RigidBody } from "@react-three/rapier";
+import * as THREE from 'three'
+import { useGLTF } from '@react-three/drei'
+import { GLTF } from 'three-stdlib'
+import { RigidBody } from '@react-three/rapier'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Object_2: THREE.Mesh;
-    Object_3: THREE.Mesh;
-    Object_4: THREE.Mesh;
-    Object_5: THREE.Mesh;
-    Object_6: THREE.Mesh;
-    Object_7: THREE.Mesh;
-    Object_8: THREE.Mesh;
-    Object_9: THREE.Mesh;
-    Object_10: THREE.Mesh;
-    Object_11: THREE.Mesh;
-    Object_12: THREE.Mesh;
-    Object_13: THREE.Mesh;
-    Object_14: THREE.Mesh;
-    Object_15: THREE.Mesh;
-    Object_16: THREE.Mesh;
-    Object_17: THREE.Mesh;
-    Object_18: THREE.Mesh;
-    Object_19: THREE.Mesh;
-    Object_20: THREE.Mesh;
-    Object_21: THREE.Mesh;
-    Object_22: THREE.Mesh;
-    Object_23: THREE.Mesh;
-    Object_24: THREE.Mesh;
-    Object_25: THREE.Mesh;
-    Object_26: THREE.Mesh;
-    Object_27: THREE.Mesh;
-    Object_28: THREE.Mesh;
-    Object_29: THREE.Mesh;
-  };
+    Object_2: THREE.Mesh
+    Object_3: THREE.Mesh
+    Object_4: THREE.Mesh
+    Object_5: THREE.Mesh
+    Object_6: THREE.Mesh
+    Object_7: THREE.Mesh
+    Object_8: THREE.Mesh
+    Object_9: THREE.Mesh
+    Object_10: THREE.Mesh
+    Object_11: THREE.Mesh
+    Object_12: THREE.Mesh
+    Object_13: THREE.Mesh
+    Object_14: THREE.Mesh
+    Object_15: THREE.Mesh
+    Object_16: THREE.Mesh
+    Object_17: THREE.Mesh
+    Object_18: THREE.Mesh
+    Object_19: THREE.Mesh
+    Object_20: THREE.Mesh
+    Object_21: THREE.Mesh
+    Object_22: THREE.Mesh
+    Object_23: THREE.Mesh
+    Object_24: THREE.Mesh
+    Object_25: THREE.Mesh
+    Object_26: THREE.Mesh
+    Object_27: THREE.Mesh
+    Object_28: THREE.Mesh
+    Object_29: THREE.Mesh
+  }
   materials: {
-    CharterhouseGreatChamber01CharterhouseGreatChamber01_Material_u1_v1: THREE.MeshBasicMaterial;
-  };
-};
+    CharterhouseGreatChamber01CharterhouseGreatChamber01_Material_u1_v1: THREE.MeshBasicMaterial
+  }
+}
 
-export function Room(props: JSX.IntrinsicElements["group"]) {
+export function Room(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(
-    "R3F-First-person-camera/the_charterhouse_great_chamber.glb",
-    "/draco-gltf"
-  ) as unknown as GLTFResult;
+    'R3F-First-person-camera/the_charterhouse_great_chamber.glb',
+    '/draco-gltf'
+  ) as unknown as GLTFResult
   return (
-    <RigidBody type="fixed" colliders="trimesh">
+    <RigidBody type='fixed' colliders='trimesh'>
       <group {...props} dispose={null} position={[0, 24, 0]} scale={2.5}>
         <group
           position={[-0.43, -9.71, 1.35]}
@@ -231,7 +231,7 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         </group>
       </group>
     </RigidBody>
-  );
+  )
 }
 
-useGLTF.preload("R3F-First-person-camera/the_charterhouse_great_chamber.glb");
+useGLTF.preload('R3F-First-person-camera/the_charterhouse_great_chamber.glb')
